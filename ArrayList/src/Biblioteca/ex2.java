@@ -21,7 +21,7 @@ public class ex2 {
             
             System.out.println("Escoge una opcion: ");
             System.out.println("1º Alta de libro");
-            System.out.println("2º Baixa de libro");
+            System.out.println("2º Baja de libro");
             System.out.println("3º Modificar libro");
             System.out.println("4º Lista de libros por numeros de paxinas");
             System.out.println("5º Lista de libro de un autor");
@@ -33,13 +33,13 @@ public class ex2 {
             switch(opc){
                 case 1: 
                     sc.nextLine(); 
-                    System.out.print("Escribe o titulo libro \n");
+                    System.out.print("Escribe el titulo libro \n");
                         titulo = sc.nextLine(); 
-                    System.out.print("Escribe o autor\n"); 
+                    System.out.print("Escribe el autor\n"); 
                         autor = sc.nextLine(); 
-                    System.out.println("Escibe o numero de paxina");
+                    System.out.println("Escribe el numero de pagina");
                         npax = sc.nextInt(); 
-                    System.out.print("Añadir o numero de ISBN\n");
+                    System.out.print("Añadir el numero de ISBN\n");
                         isbn = sc.nextInt(); 
                         Libroslist.add((new Prestamo(isbn, titulo, autor, npax))); 
                         break; 
@@ -52,11 +52,12 @@ public class ex2 {
                                 if(Libroslist.get(i).getISBN() == nbuscar){
                                     System.out.println(Libroslist.get(i).getTitulo());
                                     System.out.println(Libroslist.get(i).getAutor());
-                                        System.out.println("Es correcto: si/no");
+                                        System.out.println("Es correcto: si/no\n");
                                         text = sc.next();
                                         
                                      if (text.equalsIgnoreCase("si")) {
                                         Libroslist.remove(i); 
+                                        sc.nextLine();
                                         System.out.println("Libro Borrado"); 
                                     }
                                      else{
@@ -64,9 +65,10 @@ public class ex2 {
                                          
                                      }
            
+                            }
+                                else{
+                                    System.out.print("No se encuentra\n"); 
                                 }
-                                else
-                                    System.out.print("No se encuentra"); 
                                 
                             }
                             break; 
@@ -76,19 +78,20 @@ public class ex2 {
                             for (int i = 0; i < Libroslist.size(); i++) {
                                 if (Libroslist.get(i).getISBN() == nbuscar) {
                                     System.out.println(Libroslist.get(i).getTitulo());
-                                    System.out.print(Libroslist.get(i).getAutor());
+                                    System.out.println(Libroslist.get(i).getAutor());
                                     
                                     System.out.println("Es correcto si/no");
                                         text = sc.next(); 
                                         if (text.equalsIgnoreCase("si")) {
+                                            sc.nextLine();
                                             Libroslist.remove(i); 
-                                            System.out.print("Escribe el nuevo titulo");
+                                            System.out.println("Escribe el nuevo titulo");
                                                 titulo = sc.nextLine(); 
-                                            System.out.print("Escribe el nuevo Autor ");
+                                            System.out.println("Escribe el nuevo Autor ");
                                                 autor = sc.nextLine(); 
                                             System.out.println("Escibe el numero de pagina");
                                                 npax = sc.nextInt(); 
-                                            System.out.print("Añadir el numero de ISBN\n");
+                                            System.out.println("Añadir el numero de ISBN\n");
                                                 isbn = sc.nextInt(); 
                                             Libroslist.add(new Prestamo(isbn, titulo, autor, npax)); 
                                     }

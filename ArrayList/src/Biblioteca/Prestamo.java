@@ -42,6 +42,13 @@ public int getPax(){
 
     @Override
     public int compareTo(Prestamo t) {
+        if (this.getAutor().compareTo(t.getAutor())<0) {
+            return -1;
+        }
+         if (this.getAutor().compareTo(t.getAutor())>0) {
+            return 1;
+        }
+        
         
         if (this.getPax()<t.getPax()) {
             return -1;
@@ -53,6 +60,11 @@ public int getPax(){
             return 0;
         }
        
+        
+       
+        
+       
+        
     }
 
 
