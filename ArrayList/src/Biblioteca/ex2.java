@@ -27,6 +27,8 @@ public class ex2 {
             System.out.println("5º Lista de libro de un autor");
             System.out.println("6º Salir");
             
+            
+            
             opc = sc.nextInt(); 
             switch(opc){
                 case 1: 
